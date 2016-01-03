@@ -9,14 +9,14 @@ This is a django admin framework base on class_based views powerd by pushiqiang 
 qq:983003089<br>
 预览
 =====
-
-运行使用
-=====
 ![github1](demo_img/g1.jpg)
 ![github2](demo_img/g2.jpg)
 ![github3](demo_img/g3.jpg)
 ![github4](demo_img/g4.jpg)
 ![github5](demo_img/g5.jpg)
+
+运行使用
+=====
 1.配置settings
 ---
 TEMPLATE_CONTEXT_PROCESSORS = (<br>
