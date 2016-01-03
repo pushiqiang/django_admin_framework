@@ -12,7 +12,7 @@ qq:983003089<br>
 
 运行使用
 =====
-![github1](4.pushiqiang.sinaapp.com/static/github_img/g1.jpg)
+![github1](http://4.pushiqiang.sinaapp.com/static/github_img/g1.jpg)
 ![github2](4.pushiqiang.sinaapp.com/static/github_img/g2.jpg)
 ![github3](4.pushiqiang.sinaapp.com/static/github_img/g3.jpg)
 ![github4](4.pushiqiang.sinaapp.com/static/github_img/g4.jpg)
