@@ -18,14 +18,21 @@ qq:983003089<br>
 
 运行使用
 =====
-1.配置settings
+1.设置settings
 ---
 TEMPLATE_CONTEXT_PROCESSORS = (<br>
-          'myadmin.utils.context_processors.content_admin',<br>
+ 　　　'myadmin.utils.context_processors.content_admin',<br>
 )<br>
 INSTALLED_APPS = (<br>
-          'myadmin',<br>
+　　　　'myadmin',<br>
 )
-2.配置url
+2.设置url
 ---
-url(r'^myadmin/',include('myadmin.urls')),
+　　　　url(r'^myadmin/',include('myadmin.urls')),
+3.设置admin_settings（可以不用设置）
+---
+　　　　在myadmin/admin_settings.py文件中设置要显示的field，如xxx_admin = {'list_display':['name','description','status'],}，暂时只设置了list_display。
+
+
+
+
