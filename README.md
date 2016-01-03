@@ -6,7 +6,6 @@
 权限和认证系统还在学习中<br>
 This is a django admin framework based on general views powerd by pushiqiang of rookie
 
-邮箱：pushiqiang@126.com<br>
 qq:983003089<br>
 预览
 =====
