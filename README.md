@@ -13,10 +13,10 @@ qq:983003089<br>
 运行使用
 =====
 ![github1](demo_img/g1.jpg)
-![github2](http://4.pushiqiang.sinaapp.com/static/github_img/g2.jpg)
-![github3](http://4.pushiqiang.sinaapp.com/static/github_img/g3.jpg)
-![github4](http://4.pushiqiang.sinaapp.com/static/github_img/g4.jpg)
-![github5](http://4.pushiqiang.sinaapp.com/static/github_img/g5.jpg)
+![github2](demo_img/g2.jpg)
+![github3](demo_img/g3.jpg)
+![github4](demo_img/g4.jpg)
+![github5](demo_img/g5.jpg)
 1.配置settings
 ---
 TEMPLATE_CONTEXT_PROCESSORS = (<br>
