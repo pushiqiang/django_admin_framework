@@ -5,7 +5,7 @@ def content_admin(request):
     labels = ContentType.objects.values("app_label").distinct().order_by('app_label')
     label_apps = []
     for label in labels:
-        if str(label)=='sessions':
+        if label['app_label'] == 'sessions':
             continue
 	app_list = []
         label_app = {}
