@@ -5,11 +5,18 @@
 添加数据页面由于了使用通用试图的form模式，很不美观，下一步准备去掉通用试图，加入搜索过滤功能。<br>
 This is a django admin framework base on class_based views powerd by pushiqiang of rookie
 
-邮箱：pushiqiang@126.com
-qq:983003089
+邮箱：pushiqiang@126.com<br>
+qq:983003089<br>
+预览
+=====
 
 运行使用
 =====
+![](4.pushiqiang.sinaapp.com/static/github_img/g1.jpg)
+![](4.pushiqiang.sinaapp.com/static/github_img/g2.jpg)
+![](4.pushiqiang.sinaapp.com/static/github_img/g3.jpg)
+![](4.pushiqiang.sinaapp.com/static/github_img/g4.jpg)
+![](4.pushiqiang.sinaapp.com/static/github_img/g5.jpg)
 1.配置settings
 ---
 TEMPLATE_CONTEXT_PROCESSORS = (<br>
