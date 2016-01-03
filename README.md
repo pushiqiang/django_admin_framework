@@ -9,8 +9,7 @@ This is a django admin framework base on class_based views powerd by pushiqiang 
 1.配置settings
 ---
 TEMPLATE_CONTEXT_PROCESSORS = (<br>
-
-'myadmin.utils.context_processors.content_admin',<br>
+\r\r'myadmin.utils.context_processors.content_admin',<br>
 )<br>
 INSTALLED_APPS = (<br>
 
