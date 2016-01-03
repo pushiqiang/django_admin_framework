@@ -31,7 +31,7 @@ INSTALLED_APPS = (<br>
 　　　　url(r'^myadmin/',include('myadmin.urls')),
 3.设置admin_settings（可以不用设置）
 ---
-　　　　在myadmin/admin_settings.py文件中设置要显示的field，如xxx_admin = {'list_display':['name','description','status'],}，暂时只设置了list_display。
+　　　　在myadmin/admin_settings.py文件中设置要显示的field，默认显示所有的field,如xxx_admin = {'list_display':['name','description','status'],}，暂时只设置了list_display。
 
 
 
