@@ -3,6 +3,7 @@
 新手入门之作，大神勿喷。<br>
 为了方便采用了display views和editing views试图实现，使用到了自定义标签，context_process等<br>
 添加数据页面由于了使用通用试图的form模式，很不美观，下一步准备去掉通用试图，加入搜索过滤功能。<br>
+权限和认证系统还在学习中<br>
 This is a django admin framework base on class_based views powerd by pushiqiang of rookie
 
 邮箱：pushiqiang@126.com<br>
