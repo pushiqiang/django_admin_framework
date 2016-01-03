@@ -1,0 +1,44 @@
+<div class="fg-toolbar ui-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix">
+	    <div class="dataTables_filter" id="DataTables_Table_0_filter"></div>
+	    <div class="dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi ui-buttonset-multi paging_full_numbers" id="DataTables_Table_0_paginate">
+		<a href="?page=1" tabindex="0" class="first ui-corner-tl ui-corner-bl fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_first">首页</a>
+		{% if  page_obj.has_previous %}
+		<a href="?page={{page_obj.previous_page_number}}" tabindex="0" class="previous fg-button ui-button ui-state-default" id="DataTables_Table_0_previous">上一页</a>
+		{% else %}
+		<a tabindex="0" class="previous fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_previous">上一页</a>
+		{% endif %}
+	    <span>  
+		
+		{% for i in page_obj.paginator.page_range %}
+             		{% if page_obj.number == i %}
+			<a tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled">{{ page_obj.number }}</a>
+			{% else %}
+			<a href="?page={{i}}" tabindex="0" class="fg-button ui-button ui-state-default">{{i}}</a>
+			{% endif %}
+		{% endfor %}
+
+	    </span>
+
+	    	{% if page_obj.has_next%}
+	    	<a href="?page={{page_obj.next_page_number}}" tabindex="0" class="next fg-button ui-button ui-state-default" id="DataTables_Table_0_next">下一页</a>
+		{% else %}
+		<a tabindex="0" class="next fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_next">下一页</a>
+		{% endif %}
+	    	<a href="?page={{page_obj.paginator.num_pages}}" tabindex="0" class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default" id="DataTables_Table_0_last">尾页</a>
+	    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

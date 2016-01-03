@@ -6,12 +6,12 @@
 This is a django admin framework base on class_based views powerd by pushiqiang of rookie
 
 运行使用
-1.配置settings
+配置settings
 TEMPLATE_CONTEXT_PROCESSORS = (
     'myadmin.utils.context_processors.content_admin',
 )
 INSTALLED_APPS = (
     'myadmin',
 )
-2.配置url
+配置url
 url(r'^myadmin/',include('myadmin.urls')),

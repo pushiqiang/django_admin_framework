@@ -1,0 +1,27 @@
+{% extends "./myadmin/admin_base.html" %}
+
+<!--sidebar-menu-->
+
+{% block sideba%} 
+
+{% for label in label_apps %}
+		{% ifequal label.app_count 0 %}
+			<li><a href="/myadmin/{{label.label_name}}/"><i class="icon icon-fullscreen"></i><span>{{label.label_name}}</span></a></li>	
+		{% else %}
+		<li class="submenu"> <a href="/myadmin/{{label.label_name}}/"><i class="icon icon-file"></i> <span>{{label.label_name}}</span> <span class="label label-important">{{label.app_count}}</span></a>
+			<ul>
+			{% for app in label.app_list %}
+				<li><a href="/myadmin/{{label.label_name}}/{{app}}/">{{app}}</a></li>
+			{% endfor %}
+     			</ul>
+		</li>
+		{% endifequal %}
+	{% endfor %} 
+
+{% endblock%}
+	   
+    
+{% block right %} 
+{% endblock%}   
+   
+

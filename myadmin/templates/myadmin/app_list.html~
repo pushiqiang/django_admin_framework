@@ -1,0 +1,56 @@
+{% extends "./myadmin/admin_base.html" %}
+{% load admintags %}
+
+<!--sidebar-menu-->
+
+
+{% block home %}
+<a href="{% url 'label_list' label_name %}" class="current">{{ label_name }}</a>
+{% endblock%}
+
+{% block right %} 
+          <div class="widget-title"> <span class="icon">
+            <div class="checker" id="uniform-title-checkbox"><span class=""><div class="checker focus" id="uniform-title-checkbox"><span class="checked"><input type="checkbox" id="title-checkbox" name="title-checkbox" style="opacity: 0;"></span></div></span></div>
+            </span>
+            <h5>{{ table_name }}</h5>
+          </div>
+          <div class="widget-content nopadding">
+  <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+            <table class="table table-bordered table-striped with-check">
+              <thead>
+                <tr>
+                  <th><i class="icon-resize-vertical"></i></th>
+		  
+		  <th>表名</th>
+		  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+		  {% for object in object_list %}
+		  <tr>
+			<td><div class="checker" id="uniform-undefined"><span class=""><div class="checker" id="uniform-undefined"><span class="checked"><input type="checkbox" style="opacity: 0;"></span></div></span></div></td>
+				
+				{% for column_name in column_name_list %}
+					<td><a href="{% url 'label_name_list' label_name object.model %}">{{ object.model }}</a>
+					</td>
+		  		{% endfor %}
+		
+<td class="taskOptions"><a href="{% url 'object_add' label_name object.model %}" class="tip-top" data-original-title="Add"><i class="icon-plus"></i></a> <a href="{% url 'label_name_list' label_name object.model %}" class="tip-top" data-original-title="Update"><i class="icon-ok"></i></a></td>
+ 		  </tr>
+		  {% endfor %}
+                  
+                 
+              </tbody>
+            </table>
+	    <!--分页 -->
+   	    {% if page_obj%}
+            	{% include "./myadmin/pagination.html" %}
+            {% endif %}
+    		</div>
+          </div>
+        </div>
+        
+ {% endblock%}         
+        
+   

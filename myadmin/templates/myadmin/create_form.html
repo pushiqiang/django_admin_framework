@@ -1,0 +1,10 @@
+{% extends "./myadmin/admin_base.html" %}
+
+{% block right %} 
+
+<form action="" method="post">{% csrf_token %}
+	{{ form.as_table }}
+	<input type="submit" value="添加">
+</form>
+
+{% endblock%}

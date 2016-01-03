@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{% block title%}XiaoYu Admin{% endblock%}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/myadmin/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/myadmin/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="/static/myadmin/css/uniform.css">
+<link rel="stylesheet" href="/static/myadmin/css/select2.css">
+<link rel="stylesheet" href="/static/myadmin/css/matrix-style.css">
+<link rel="stylesheet" href="/static/myadmin/css/matrix-media.css">
+<link href="/static/myadmin/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="/static/myadmin/css/css" rel="stylesheet" type="text/css">
+{% block headcss%} {% endblock%}
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="/static/myadmin/dashboard.html">Matrix Admin</a></h1>
+</div>
+<!--close-Header-part--> 
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav" style="width: auto; margin: 0px;">
+    <li class="dropdown" id="profile-messages"><a title="" href="/static/myadmin/tables.html#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">{{user.username}}</span><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="/static/myadmin/tables.html#"><i class="icon-user"></i> 更改头像</a></li>
+        <li class="divider"></li>
+        <li><a href="/static/myadmin/tables.html#"><i class="icon-check"></i> 更改密码</a></li>
+        <li class="divider"></li>
+        <li><a href="{% url 'admin_logout' %}"><i class="icon-key"></i> 退出</a></li>
+      </ul>
+    </li>
+    <li class="dropdown" id="menu-messages"><a href="/static/myadmin/tables.html#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a class="sAdd" title="" href="/static/myadmin/tables.html#"><i class="icon-plus"></i> new message</a></li>
+        <li class="divider"></li>
+        <li><a class="sInbox" title="" href="/static/myadmin/tables.html#"><i class="icon-envelope"></i> inbox</a></li>
+        <li class="divider"></li>
+        <li><a class="sOutbox" title="" href="/static/myadmin/tables.html#"><i class="icon-arrow-up"></i> outbox</a></li>
+        <li class="divider"></li>
+        <li><a class="sTrash" title="" href="/static/myadmin/tables.html#"><i class="icon-trash"></i> trash</a></li>
+      </ul>
+    </li>
+    <li class=""><a title="" href="/static/myadmin/tables.html#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+    <li class=""><a title="" href="/static/myadmin/login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+  </ul>
+</div>
+
+<!--start-top-serch-->
+<div id="search">
+  <input type="text" placeholder="Search here...">
+  <button type="submit" class="tip-bottom" data-original-title="Search"><i class="icon-search icon-white"></i></button>
+</div>
+<!--close-top-serch--> 
+
+<!--sidebar-menu-->
+
+<div id="sidebar"> <a href="/static/myadmin/tables.html#" class="visible-phone"><i class="icon icon-th"></i>Tables</a>
+  <ul style="display: block;">
+
+{% block sideba%} 
+{% for label in label_apps %}
+		{% ifequal label.app_count 0 %}
+			<li><a href="{% url 'label_list' label.label_name %}"><i class="icon icon-fullscreen"></i><span>{{label.label_name}}</span></a></li>	
+		{% else %}
+		<li class="submenu"> <a href=""><i class="icon icon-file"></i> <span>{{label.label_name}}</span> <span class="label label-important">{{label.app_count}}</span></a>
+			<ul>
+			{% for app in label.app_list %}
+				<li><a href="{% url 'label_name_list' label.label_name app.model %}">{{app.name}}</a></li>
+			{% endfor %}
+     			</ul>
+		</li>
+		{% endifequal %}
+	{% endfor %} 
+{% endblock%}
+
+  </ul>
+</div>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="{% url 'admin_index' %}" class="tip-bottom" data-original-title="Go to Home"><i class="icon-home"></i> Home</a> {% block home %} {% endblock%}</div>
+    
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        
+        <div class="widget-box">
+          
+	{% block right %} {% endblock%}
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-part-->
+<div class="row-fluid">
+  <div id="footer" class="span12"> 2013 © Matrix Admin. Brought to you by <a href="http://themedesigner.in/">Themedesigner.in</a> </div>
+</div>
+<!--end-Footer-part-->
+<script src="/static/myadmin/js/jquery.min.js"></script> 
+<script src="/static/myadmin/js/jquery.ui.custom.js"></script> 
+<script src="/static/myadmin/js/bootstrap.min.js"></script> 
+<script src="/static/myadmin/js/jquery.uniform.js"></script> 
+<script src="/static/myadmin/js/select2.min.js"></script> 
+<script src="/static/myadmin/js/jquery.dataTables.min.js"></script> 
+<script src="/static/myadmin/js/matrix.js"></script> 
+<script src="/static/myadmin/js/matrix.tables.js"></script>
+
+
+<ul class="typeahead dropdown-menu"></ul><ul class="typeahead dropdown-menu"></ul></body></html>
