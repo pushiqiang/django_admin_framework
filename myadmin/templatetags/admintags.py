@@ -1,7 +1,14 @@
 from django.contrib.contenttypes.models import ContentType
 from django import template
 from django.db import models
+from django.core.cache import caches
+
 register = template.Library()
+
+try:
+    cache = caches['memcache']
+except ImportError as e:
+    cache = caches['default']
 
 @register.filter
 def attrvalue(var,arg):
@@ -11,7 +18,13 @@ def attrvalue(var,arg):
     return value
 @register.inclusion_tag("myadmin/sidebar.html")
 def content_admin():
-    """ context processor for the site templates """
+    label_apps = cache.get('label_apps')
+    if label_apps is not None:
+	print label_apps
+        return {
+            'label_apps': label_apps
+            }
+
     labels = ContentType.objects.values("app_label").distinct().order_by('app_label')
     label_apps = []
     for label in labels:
