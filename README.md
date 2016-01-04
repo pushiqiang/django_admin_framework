@@ -1,7 +1,7 @@
 # django_admin_framework
 基于通用视图的admin框架<br>
 新手入门之作，大神勿喷。<br>
-为了方便采用了display views和editing views视图实现，使用到了自定义标签，context_process等<br>
+为了方便采用了display views和editing views视图实现，使用到了自定义过滤器，自定义标签，inclusion标签等<br>
 添加数据页面由于了使用通用视图的form模式，很不美观，下一步准备去掉通用视图，加入搜索过滤功能。<br>
 权限和认证系统还在学习中<br>
 This is a django admin framework based on general views powerd by pushiqiang of rookie<br>
@@ -22,9 +22,7 @@ qq:983003089<br>
 =====
 1.设置settings
 ---
-TEMPLATE_CONTEXT_PROCESSORS = (<br>
- 　　　'myadmin.utils.context_processors.content_admin',<br>
-)<br>
+
 INSTALLED_APPS = (<br>
 　　　　'myadmin',<br>
 )
