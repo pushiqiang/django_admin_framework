@@ -10,6 +10,12 @@ python 2.7<br>
 django 1.7
 
 qq:983003089<br>
+<br>
+更新
+---
+2016.1.7　　更新pdf表格打印功能，可以打印出前台报表
+
+
 预览
 =====
 ![github1](demo_img/g1.jpg)
@@ -17,6 +23,9 @@ qq:983003089<br>
 ![github3](demo_img/g3.jpg)
 ![github4](demo_img/g4.jpg)
 ![github5](demo_img/g5.jpg)
+![github5](demo_img/g6.jpg)
+![github5](demo_img/g7.jpg)
+![github5](demo_img/g8.jpg)
 
 运行使用
 =====
