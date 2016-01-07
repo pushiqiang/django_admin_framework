@@ -10,6 +10,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db.models import get_model
 
 from myadmin import admin_settings
+from myadmin.pdf_gen import GenPDF
 
 from django.contrib.auth.decorators import login_required  
 from django.contrib.auth import authenticate, login,logout
@@ -65,6 +66,22 @@ class ObjectListView(ListView):
         kwargs['table_name'] = name
         kwargs['label_name'] = label    
         return super(ObjectListView,self).get_context_data(**kwargs)
+
+    def post(self,request,**kwargs):
+        name = self.kwargs.get('name','')
+        admin_str = name + "_admin"
+        page = request.POST.get('page',None)
+        page = int(page)
+        begin = (page-1)*PAGE_NUM
+        end = page*PAGE_NUM - 1
+        admin_setting = getattr(admin_settings,admin_str,None)
+        list_display = admin_setting['list_display']
+        result = ObjectListView.model.objects.values(*list_display)[begin:end]
+        
+        return GenPDF(tablename=name,head=list_display,result=result)
+
+
+
 
 class ObjectCreateView(CreateView):
     pass
